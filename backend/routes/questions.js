@@ -7,7 +7,8 @@ const { body, validationResult } = require('express-validator');
 // ROUTE 1: Get All the Notes using: GET "/api/notes/getuser". Login required
 router.get('/fetchallnotes', fetchuser, async (req, res) => {
     try {
-        res.json(Notes)
+        const notes = await Note.find({ show: 'all' });
+        res.json(notes)
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");
@@ -20,6 +21,7 @@ router.post('/addnote', fetchuser, [
     body('description', 'Description must be atleast 5 characters').isLength({ min: 5 }),], async (req, res) => {
         try {
             const { title, description, tag } = req.body;
+            const show ='all';
 
             // If there are errors, return Bad request and the errors
             const errors = validationResult(req);
@@ -27,7 +29,7 @@ router.post('/addnote', fetchuser, [
                 return res.status(400).json({ errors: errors.array() });
             }
             const note = new Note({
-                title, description, tag, user: req.user.id
+                show, title, description, tag, user: req.user.id
             })
             const savedNote = await note.save()
 
@@ -42,9 +44,11 @@ router.post('/addnote', fetchuser, [
 // ROUTE 3: Update an existing Note using: PUT "/api/notes/updatenote". Login required
 router.put('/updatenote/:id', fetchuser, async (req, res) => {
     const { title, description, tag } = req.body;
+    const show = 'all';
     try {
         // Create a newNote object
         const newNote = {};
+        if (show) { newNote.show = show };
         if (title) { newNote.title = title };
         if (description) { newNote.description = description };
         if (tag) { newNote.tag = tag };

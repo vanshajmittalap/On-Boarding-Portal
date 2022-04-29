@@ -35,10 +35,10 @@ router.post('/addnote', fetchuser, async (req, res) => {
             const {course, branch, gradyear, jeenumber, jee, class12, board12, roll12, class10, board10, roll10} = req.body;
 
             // If there are errors, return Bad request and the errors
-            const errors = validationResult(req);
-            if (!errors.isEmpty()) {
-                return res.status(400).json({ errors: errors.array() });
-            }
+            // const errors = validationResult(req);
+            // if (!errors.isEmpty()) {
+            //     return res.status(400).json({ errors: errors.array() });
+            // }
             const note = new Note({
                 course, branch, gradyear, jeenumber, jee, class12, board12, roll12, class10, board10, roll10, user: req.user.id
             })

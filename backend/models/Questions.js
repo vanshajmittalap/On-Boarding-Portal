@@ -6,6 +6,10 @@ const NotesSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
+    show:{
+        type: String,
+        required: true
+    },
     title:{
         type: String,
         required: true
