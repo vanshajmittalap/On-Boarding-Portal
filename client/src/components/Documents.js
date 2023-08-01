@@ -7,7 +7,7 @@ function Documents(props) {
       });
       let history = useHistory();
       const handlenext = ()=>{
-        history.push("/result");
+        history.push("/");
       }
       const handleback = ()=>{
         history.push("/education");

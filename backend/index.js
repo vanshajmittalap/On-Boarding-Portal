@@ -2,11 +2,14 @@ const connectToMongo = require('./db');
 const express = require('express')
 var cors = require('cors') 
 
+// import {v2 as cloudinary} from 'cloudinary';
+
+
 
 
 connectToMongo();
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
@@ -20,5 +23,5 @@ app.use('/api/document', require('./routes/document'))
 app.use('/api/questions', require('./routes/questions'))
 
 app.listen(port, () => {
-  console.log(`iNotebook backend listening at http://localhost:${port}`)
+  console.log(`Backend Started`)
 })

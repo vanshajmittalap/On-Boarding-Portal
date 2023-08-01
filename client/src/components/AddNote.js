@@ -29,7 +29,7 @@ const AddNote = (props) => {
             <h1 style={myStyle1}>ASK YOUR QUESTIONS</h1>
             <h3 style={myStyle1}>For discussion on your doubts join 'DISCUSSION CLASSROOM'</h3>
             <h6 style={myStyle1}>You will get your Username and Password for this Classroom on your registered E-Mail Id soon.</h6>
-            <a href="https://discussion-classroom-iiit-pune.netlify.app/" target='_blank' rel='noreferrer' class="btn btn-danger btn-lg" role="button" style={{marginLeft:'40%', padding:'10px 10px 10px 10px'}}>DISCUSSION CLASSROOM</a>
+            {/* <a href="https://discussion-classroom-iiit-pune.netlify.app/" target='_blank' rel='noreferrer' class="btn btn-danger btn-lg" role="button" style={{marginLeft:'40%', padding:'10px 10px 10px 10px'}}>DISCUSSION CLASSROOM</a> */}
             <form className="my-3">
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label"style={myStyle2}>Write the Subject Name</label>

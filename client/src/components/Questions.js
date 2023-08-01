@@ -7,10 +7,10 @@ import { useHistory } from 'react-router';
 const Notes = (props) => {
     const context = useContext(noteContext);
     let history = useHistory()
-    const { questions, getQuestions, editQuestion } = context;
+    const { questions, getQuestions, editQuestion} = context;
     useEffect(() => {
         if(localStorage.getItem('token')){
-            getQuestions()
+            getQuestions();
         }
         else{
             history.push("/login")
