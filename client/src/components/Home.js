@@ -30,7 +30,7 @@ export const Home = () => {
             padding: "10px 10px 10px 10px",
           }}
         >
-          Your On-Boarding Process in completed.
+         {(!localStorage.getItem("token"))?"Complete Your On-Boarding Process" : "Your On-Boarding Process in completed."}
         </h3>
         <h6
           style={{
