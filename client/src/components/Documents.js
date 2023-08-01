@@ -120,11 +120,13 @@ function Documents(props) {
                 <input type="file" className="form-control" id="undertaking" name="undertaking" style={{backgroundColor: "rgb(36 74 104)", color: "#fd7e14", fontFamily: "cursive"}}
                 onChange={onChange}/>
             </div>
-            <button type="reset" className="btn btn-danger" style={{marginLeft:'30px', marginBottom:'20px'}}>RESET</button>
-            <button type="submit" className="btn btn-danger" onClick={handlesubmit} style={{marginLeft:'30px', marginBottom:'20px'}}>SAVE</button>
-            <button type="submit" className="btn btn-danger" onClick={handlenext} style={{marginLeft:'30px', marginBottom:'20px'}}>NEXT</button>
-            <button type="submit" className="btn btn-danger" onClick={handleback} style={{marginLeft:'30px', marginBottom:'20px'}}>BACK</button>
+            <button type="reset" className="btn btn-danger" style={{marginLeft:'30px', marginBottom:'10px'}}>RESET</button>
         </form>
+        <div style={{display: "flex", justifyContent:"space-around"}}>
+        <button className="btn btn-danger" onClick={handleback} style={{ marginBottom:'20px'}}>BACK</button>
+        <button className="btn btn-danger" onClick={handlesubmit} style={{marginBottom:'20px'}}>SAVE</button>
+        <button className="btn btn-danger" onClick={handlenext} style={{marginBottom:'20px'}}>NEXT</button>
+        </div>
       </div>
         </>
     )
